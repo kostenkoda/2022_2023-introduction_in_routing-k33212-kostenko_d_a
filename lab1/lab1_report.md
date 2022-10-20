@@ -1,5 +1,26 @@
 # Отчет по лабораторной работе №1 "Установка ContainerLab и развертывание тестовой сети связи"
-В ходе выполнения лабораторной работы был развернута тестовая сеть связи. 
+University: [ITMO University](https://itmo.ru/ru/)
+
+Faculty: [FICT](https://fict.itmo.ru)
+
+Course: [Introduction in routing](https://github.com/itmo-ict-faculty/introduction-in-routing)
+
+Year: 2022/2023
+
+Group: K33212
+
+Author: Kostenko Darina Alekseevna
+
+Lab: Lab1
+
+Date of create: 20.09.2022
+
+Date of finished: 20.10.2022
+
+**Цель работы:** ознакомиться с инструментом ContainerLab и методами работы с ним, изучить работу VLAN, IP адресации и т.д; развернуть тестовую сеть связи, настроить оборудование на базе Linux и RouterOS.
+
+**Итог выполнения работы:**
+
 1. Текст файла, который был использован для развертывания тестовой сети с расширением .yaml
 
 ```
