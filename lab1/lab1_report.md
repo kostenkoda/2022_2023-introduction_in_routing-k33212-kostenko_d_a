@@ -74,12 +74,12 @@ topology:
 
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/lab1.drawio.png)
 
-3. Топология CpntainerLab
+3. Топология ContainerLab
 
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/containerlab_topology_lab1.jpeg)
 
 4. Текст конфигураций сетевых устройств
-- Роутер
+- Роутер R01.TEST
 
 ```
 /interface vlan
@@ -106,7 +106,7 @@ add address=192.168.20.0/24 gateway=192.168.20.1
 set name=R01.TEST
 ```
 
-- Свитч первого уровня
+- Свитч первого уровня SW01.L3.01.TEST
 
 ```
 /interface bridge
@@ -134,7 +134,7 @@ add disabled=no interface=bridge20
 set name=SW01.L3.01.TEST
 ```
 
-- Первый свитч второго уровня
+- Первый свитч второго уровня SW02.L3.01.TEST
 
 ```
 /interface bridge
@@ -155,7 +155,7 @@ add disabled=no interface=bridge10
 set name=SW02.L3.01.TEST
 ```
 
-- Второй свитч второго уровня
+- Второй свитч второго уровня SW02.L3.02.TEST
 
 ```
 /interface bridge
