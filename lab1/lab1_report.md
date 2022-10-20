@@ -181,17 +181,17 @@ set name=SW02.L3.02.TEST
 
 - Проверка на роутере
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/router_check.jpeg "Схема связи")
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/router_check.jpeg)
 
 - Проверка на свитче первого уровня
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/switch11_check.jpeg "Схема связи")
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/switch11_check.jpeg)
 
 - Проверка на первом свитче второго уровня
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/switch21_check.jpeg "Схема связи")
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/switch21_check.jpeg)
 
 - Проверка на втором свитче второго уровня
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/switch22_check.jpeg "Схема связи")
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/switch22_check.jpeg)
 
