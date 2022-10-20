@@ -72,9 +72,13 @@ topology:
 
 2. Схема связи
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/lab1.drawio.png "Схема связи")
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/lab1.drawio.png)
 
-3. Текст конфигураций сетевых устройств
+3. Топология CpntainerLab
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab1/containerlab_topology_lab1.jpeg)
+
+4. Текст конфигураций сетевых устройств
 - Роутер
 
 ```
