@@ -1,0 +1,18 @@
+all:
+  children:
+    linux:
+      hosts:
+        clab-lab1-PC1:
+          ansible_host: 172.20.20.41
+        clab-lab1-PC2:
+          ansible_host: 172.20.20.42
+    vr-ros:
+      hosts:
+        clab-lab1-R01.TEST:
+          ansible_host: 172.20.20.11
+        clab-lab1-SW01.L3.01.TEST:
+          ansible_host: 172.20.20.21
+        clab-lab1-SW02.L3.01.TEST:
+          ansible_host: 172.20.20.31
+        clab-lab1-SW02.L3.02.TEST:
+          ansible_host: 172.20.20.32
