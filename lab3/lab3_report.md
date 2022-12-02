@@ -271,7 +271,7 @@ add area=backbone
 set name=R01.SPB
 ```
 
-На сервере и компьютере были настроены IP адреса на интерфейсах, между ними обеспечена связь с помощью EoMPLS.
+На сервере и компьютере были настроены IP адреса на интерфейсах, между ними устанавливается связь с помощью EoMPLS.
 
 - Сервер SGI Prism
 
@@ -303,9 +303,9 @@ set name=PC1
 
 4. Проверки локальной связности
 
-- Таблицы MPLS маршрутов на роутерах
+- Таблицы MPLS маршрутов на некоторых роутерах
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rldn.jpeg)
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rlnd.jpeg)
 
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rmsk.jpeg)
 
@@ -315,8 +315,8 @@ set name=PC1
 
 - Пинг компьютера и сервера
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/ping_pc1.jpeg)
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/ping_pc.jpeg)
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/ping_sgi.jpeg)
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/ping_server.jpeg)
 
 **Вывод:** в ходе выполнения лабораторной работы были получены навыки по развертыванию сети связи и настройке OSPF, MPLS И EoMPLS.
