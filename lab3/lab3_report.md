@@ -303,13 +303,17 @@ set name=PC1
 
 4. Проверки локальной связности
 
-- Таблицы MPLS маршрутов на некоторых роутерах
+- Таблицы MPLS маршрутов на роутерах
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rny.jpeg)
 
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rlnd.jpeg)
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rmsk.jpeg)
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rlbn.jpeg)
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rny.jpeg)
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rhki.jpeg)
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rmsk.jpeg)
 
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rspb.jpeg)
 
