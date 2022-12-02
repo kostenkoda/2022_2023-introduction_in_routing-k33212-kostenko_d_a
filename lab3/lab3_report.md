@@ -82,3 +82,241 @@ topology:
     - endpoints: ["R01.MSK:eth2","R01.SPB:eth1"]
     - endpoints: ["R01.SPB:eth3","PC1:eth1"]
 ```
+
+2. Схема связи
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/lab3.drawio.png "Схема связи")
+
+3. Текст конфигураций сетевых устройств
+
+На всех роутерах были настроены IP адреса на интерфейсах, OSPF и MPLS. На роутерах R01.NY и R01.SPB был настроен EoMPLS.
+
+- Роутер R01.NY
+
+```
+/interface bridge
+add name=EoMPLS_B
+add name=Lo0
+/interface vpls
+add cisco-style=yes cisco-style-id=100 disabled=no l2mtu=1500 mac-address=02:6D:A8:2A:8E:0C name=EoMPLS remote-peer=\
+    6.6.6.6
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/routing ospf instance
+set [ find default=yes ] router-id=1.1.1.1
+/interface bridge port
+add bridge=EoMPLS_B interface=ether2
+add bridge=EoMPLS_B interface=EoMPLS
+/ip address
+add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+add address=10.0.1.1/30 interface=ether3 network=10.0.1.0
+add address=10.0.2.1/30 interface=ether4 network=10.0.2.0
+add address=1.1.1.1 interface=Lo0 network=1.1.1.1
+/ip dhcp-client
+add disabled=no interface=ether1
+/mpls ldp
+set enabled=yes transport-address=1.1.1.1
+/mpls ldp interface
+add interface=ether3
+add interface=ether4
+/routing ospf network
+add area=backbone
+/system identity
+set name=R01.NY
+```
+
+- Роутер R01.LND
+
+```
+/interface bridge
+add name=Lo0
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/routing ospf instance
+set [ find default=yes ] router-id=2.2.2.2
+/ip address
+add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+add address=10.0.1.2/30 interface=ether2 network=10.0.1.0
+add address=10.0.3.1/30 interface=ether3 network=10.0.3.0
+add address=2.2.2.2 interface=Lo0 network=2.2.2.2
+/ip dhcp-client
+add disabled=no interface=ether1
+/mpls ldp
+set enabled=yes transport-address=2.2.2.2
+/mpls ldp interface
+add interface=ether2
+add interface=ether3
+/routing ospf network
+add area=backbone
+/system identity
+set name=R01.LND
+```
+
+- Роутер R01.LBN
+
+```
+/interface bridge
+add name=Lo0
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/routing ospf instance
+set [ find default=yes ] router-id=3.3.3.3
+/ip address
+add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+add address=10.0.2.2/30 interface=ether2 network=10.0.2.0
+add address=10.0.4.1/30 interface=ether3 network=10.0.4.0
+add address=10.0.5.1/30 interface=ether4 network=10.0.5.0
+add address=3.3.3.3 interface=Lo0 network=3.3.3.3
+/ip dhcp-client
+add disabled=no interface=ether1
+/mpls ldp
+set enabled=yes transport-address=3.3.3.3
+/mpls ldp interface
+add interface=ether2
+add interface=ether3
+add interface=ether4
+/routing ospf network
+add area=backbone
+/system identity
+set name=R01.LBN
+```
+
+- Роутер R01.HKI
+
+```
+/interface bridge
+add name=Lo0
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/routing ospf instance
+set [ find default=yes ] router-id=4.4.4.4
+/ip address
+add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+add address=10.0.3.2/30 interface=ether2 network=10.0.3.0
+add address=10.0.6.1/30 interface=ether3 network=10.0.6.0
+add address=10.0.5.2/30 interface=ether4 network=10.0.5.0
+add address=4.4.4.4 interface=Lo0 network=4.4.4.4
+/ip dhcp-client
+add disabled=no interface=ether1
+/mpls ldp
+set enabled=yes transport-address=4.4.4.4
+/mpls ldp interface
+add interface=ether2
+add interface=ether3
+add interface=ether4
+/routing ospf network
+add area=backbone
+/system identity
+set name=R01.HKI
+```
+
+- Роутер R01.MSK
+
+```
+/interface bridge
+add name=Lo0
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/routing ospf instance
+set [ find default=yes ] router-id=5.5.5.5
+/ip address
+add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+add address=10.0.4.2/30 interface=ether2 network=10.0.4.0
+add address=10.0.7.1/30 interface=ether3 network=10.0.7.0
+add address=5.5.5.5 interface=Lo0 network=5.5.5.5
+/ip dhcp-client
+add disabled=no interface=ether1
+/mpls ldp
+set enabled=yes transport-address=5.5.5.5
+/mpls ldp interface
+add interface=ether2
+add interface=ether3
+/routing ospf network
+add area=backbone
+/system identity
+set name=R01.MSK
+```
+
+- Роутер R01.SPB
+
+```
+/interface bridge
+add name=EoMPLS_B
+add name=Lo0
+/interface vpls
+add cisco-style=yes cisco-style-id=100 disabled=no l2mtu=1500 mac-address=02:2D:EA:16:D6:9A name=EoMPLS remote-peer=\
+    1.1.1.1
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/routing ospf instance
+set [ find default=yes ] router-id=6.6.6.6
+/interface bridge port
+add bridge=EoMPLS_B interface=ether4
+add bridge=EoMPLS_B interface=EoMPLS
+/ip address
+add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+add address=10.0.7.2/30 interface=ether2 network=10.0.7.0
+add address=10.0.6.2/30 interface=ether3 network=10.0.6.0
+add address=6.6.6.6 interface=Lo0 network=6.6.6.6
+/ip dhcp-client
+add disabled=no interface=ether1
+/mpls ldp
+set enabled=yes transport-address=6.6.6.6
+/mpls ldp interface
+add interface=ether2
+add interface=ether3
+/routing ospf network
+add area=backbone
+/system identity
+set name=R01.SPB
+```
+
+На сервере и компьютере были настроены IP адреса на интерфейсах, между ними обеспечена связь с помощью EoMPLS.
+
+- Сервер SGI Prism
+
+```
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip address
+add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+add address=192.168.10.11/24 interface=ether2 network=192.168.10.0
+/ip dhcp-client
+add disabled=no interface=ether1
+/system identity
+set name=SGI-Prism
+```
+
+- Компьютер PC1
+
+```
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip address
+add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+add address=192.168.10.12/24 interface=ether2 network=192.168.10.0
+/ip dhcp-client
+add disabled=no interface=ether1
+/system identity
+set name=PC1
+```
+
+4. Проверки локальной связности
+
+- Таблицы MPLS маршрутов на роутерах
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rldn.jpeg)
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rmsk.jpeg)
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rny.jpeg)
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/rspb.jpeg)
+
+- Пинг компьютера и сервера
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/ping_pc1.jpeg)
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab3/pictures/ping_sgi.jpeg)
+
+**Вывод:** в ходе выполнения лабораторной работы были получены навыки по развертыванию сети связи и настройке OSPF, MPLS И EoMPLS.
