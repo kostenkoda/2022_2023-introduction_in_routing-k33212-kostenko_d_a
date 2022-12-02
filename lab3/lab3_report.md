@@ -62,13 +62,13 @@ topology:
       mgmt_ipv4: 172.20.20.16
     
     SGI Prism:
-      kind: linux
-      image: ubuntu:latest
+      kind: vr-ros
+      image: vrnetlab/vr-routeros:6.47.9
       mgmt_ipv4: 172.20.20.21
 
     PC1:
-      kind: linux
-      image: ubuntu:latest
+      kind: vr-ros
+      image: vrnetlab/vr-routeros:6.47.9
       mgmt_ipv4: 172.20.20.31
     
   links:
