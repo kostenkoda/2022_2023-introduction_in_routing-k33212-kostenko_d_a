@@ -47,7 +47,7 @@ topology:
       mgmt_ipv4: 172.20.20.31
     
   links:
-    - endpoints: ["R01.NY:eth1","SGI Prism:eth1"]
+    - endpoints: ["R01.NY:eth1","SGI-Prism:eth1"]
     - endpoints: ["R01.NY:eth2","R01.LND:eth1"]
     - endpoints: ["R01.NY:eth3","R01.LBN:eth1"]
     - endpoints: ["R01.LND:eth2","R01.HKI:eth1"]
