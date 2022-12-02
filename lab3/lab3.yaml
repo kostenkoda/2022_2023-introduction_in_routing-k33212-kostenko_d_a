@@ -36,7 +36,7 @@ topology:
       image: vrnetlab/vr-routeros:6.47.9
       mgmt_ipv4: 172.20.20.16
     
-    SGI Prism:
+    SGI-Prism:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
       mgmt_ipv4: 172.20.20.21
