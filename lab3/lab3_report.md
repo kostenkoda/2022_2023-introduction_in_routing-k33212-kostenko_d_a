@@ -15,7 +15,7 @@ Lab: Lab3
 
 Date of create: 19.11.2022
 
-Date of finished: ?
+Date of finished: 16.12.2022
 
 **Цель работы:** изучить протоколы OSPF и MPLS, механизмы организации EoMPLS.
 
