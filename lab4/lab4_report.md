@@ -368,7 +368,17 @@ set name=PC3
 
 4. Проверки локальной связности
 
+- Результаты некоторых пингов
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/spbpingcheck.jpeg)
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lndpingcheck.jpeg)
+
+- На всех роутерах bgp peer'ы находятся в состоянии established, пример для R01.LBN
+
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lbnbgppeer.jpeg)
+
 - Проверка связности между VRF
+
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/spbcheck.jpeg)
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/nycheck.jpeg)
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/svlcheck.jpeg)
