@@ -98,6 +98,8 @@ Cхема связи для **1** части
 
 Cхема связи для **2** части 
 
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lab4-2.drawio.png "Схема связи")
+
 3. Текст конфигураций сетевых устройств 
 
 **Первая часть:** На всех роутерах были настроены IP адреса на интерфейсах, OSPF и MPLS, iBGP, в том чсиле с route reflector кластером для 3 роутеров в центре схемы связи (HKI, LBN, LND), на 3 роутерах (SPB, NY, SVL) были настроены VRF, RD и RT на интерфейсах, через которые они соединены с компьютерами.
@@ -372,7 +374,68 @@ set name=PC3
 
 **Вторая часть:** На 3 роутерах (SPB, NY, SVL) был разобран VRF. Далее на этих трех роутерах был настроен VPLS, для чего с интерфейсов этих роутеров, через которые они связаны с компьютерами, был удален IP-адрес и применены настройки конфигурации, представленные ниже. Также на компьютерах была настроена IP-адресация в одной сети (192.168.0.0/24).
 
+R01.SPB
+```
+/interface bridge
+add name=VPLSb
+/interface vpls
+add disabled=no l2mtu=1500 mac-address=02:39:C2:02:4A:28 name=VPLS1 \
+    remote-peer=5.5.5.5 vpls-id=10:0
+add disabled=no l2mtu=1500 mac-address=02:07:2A:3D:7A:3F name=VPLS2 \
+    remote-peer=6.6.6.6 vpls-id=10:0
+/interface bridge port
+add bridge=VPLSb interface=ether2
+add bridge=VPLSb interface=VPLS1
+add bridge=VPLSb interface=VPLS2
+```
 
+R01.NY
+```
+/interface bridge
+add name=VPLSb
+/interface vpls
+add disabled=no l2mtu=1500 mac-address=02:74:E7:AB:72:59 name=VPLS1 \
+    remote-peer=1.1.1.1 vpls-id=10:0
+add disabled=no l2mtu=1500 mac-address=02:16:82:73:0D:BE name=VPLS3 \
+    remote-peer=6.6.6.6 vpls-id=10:0
+/interface bridge port
+add bridge=VPLSb interface=ether3
+add bridge=VPLSb interface=VPLS1
+add bridge=VPLSb interface=VPLS3
+```
+
+R01.SVL
+```
+/interface bridge
+add name=VPLSb
+/interface vpls
+add disabled=no l2mtu=1500 mac-address=02:38:4E:AE:2D:A8 name=VPLS2 \
+    remote-peer=1.1.1.1 vpls-id=10:0
+add disabled=no l2mtu=1500 mac-address=02:B2:40:AD:5D:2B name=VPLS3 \
+    remote-peer=5.5.5.5 vpls-id=10:0
+/interface bridge port
+add bridge=VPLSb interface=ether3
+add bridge=VPLSb interface=VPLS2
+add bridge=VPLSb interface=VPLS3
+```
+
+PC1
+```
+/ip address
+add address=192.168.0.1/24 interface=ether2 network=192.168.0.0
+```
+
+PC2
+```
+/ip address
+add address=192.168.0.2/24 interface=ether2 network=192.168.0.0
+```
+
+PC3
+```
+/ip address
+add address=192.168.0.3/24 interface=ether2 network=192.168.0.0
+```
 
 4. Проверки локальной связности
 
