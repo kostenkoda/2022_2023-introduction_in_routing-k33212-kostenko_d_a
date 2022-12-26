@@ -94,11 +94,11 @@ topology:
 
 Cхема связи для **1** части 
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lab4.drawio.png "Схема связи")
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lab4.drawio.png "Схема связи для 1 части")
 
 Cхема связи для **2** части 
 
-![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lab4-2.drawio.png "Схема связи")
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lab4-2.drawio.png "Схема связи для 2 части")
 
 3. Текст конфигураций сетевых устройств 
 
