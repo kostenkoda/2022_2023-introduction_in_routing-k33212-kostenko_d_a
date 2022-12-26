@@ -455,8 +455,8 @@ add address=192.168.0.3/24 interface=ether2 network=192.168.0.0
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/svlcheck.jpeg)
 
 - Проверка связности между компьютерами при использовании VPLS во **2** части
-
-
-
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/pc1pingcheck.jpeg)
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/pc2pingcheck.jpeg)
+![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/pc3pingcheck.jpeg)
 
 **Вывод:** в ходе выполнени лабораторной работы при создании и настройке IP/MPLS сеть связи для "RogaIKopita Games" были изучены протоколы BGP, MPLS и правила организации L3VPN и VPLS.
