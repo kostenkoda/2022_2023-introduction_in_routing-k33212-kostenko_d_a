@@ -92,7 +92,11 @@ topology:
 
 2. Схема связи
 
+Cхема связи для **1** части 
+
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lab4.drawio.png "Схема связи")
+
+Cхема связи для **2** части 
 
 3. Текст конфигураций сетевых устройств 
 
@@ -111,7 +115,7 @@ set default router-id=1.1.1.1
 set [ find default=yes ] router-id=1.1.1.1
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
-add address=192.168.10.1/30 interface=ether2 network=192.168.10.0
+add address=192.168.10.1/24 interface=ether2 network=192.168.10.0
 add address=10.0.1.1/30 interface=ether3 network=10.0.1.0
 add address=1.1.1.1 interface=Lo0 network=1.1.1.1
 /ip dhcp-client
@@ -263,7 +267,7 @@ set [ find default=yes ] router-id=5.5.5.5
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
 add address=10.0.5.2/30 interface=ether2 network=10.0.5.0
-add address=192.168.20.1/30 interface=ether3 network=192.168.20.0
+add address=192.168.20.1/24 interface=ether3 network=192.168.20.0
 add address=5.5.5.5 interface=Lo0 network=5.5.5.5
 /ip dhcp-client
 add disabled=no interface=ether1
@@ -300,7 +304,7 @@ set [ find default=yes ] router-id=6.6.6.6
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
 add address=10.0.6.2/30 interface=ether2 network=10.0.6.0
-add address=192.168.30.1/30 interface=ether3 network=192.168.30.0
+add address=192.168.30.1/24 interface=ether3 network=192.168.30.0
 add address=6.6.6.6 interface=Lo0 network=6.6.6.6
 /ip dhcp-client
 add disabled=no interface=ether1
@@ -331,7 +335,7 @@ set name=R01.SVL
 set [ find default=yes ] supplicant-identity=MikroTik
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
-add address=192.168.10.2/30 interface=ether2 network=192.168.10.0
+add address=192.168.10.2/24 interface=ether2 network=192.168.10.0
 /ip dhcp-client
 add disabled=no interface=ether1
 /system identity
@@ -345,7 +349,7 @@ set name=PC1
 set [ find default=yes ] supplicant-identity=MikroTik
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
-add address=192.168.20.2/30 interface=ether2 network=192.168.20.0
+add address=192.168.20.2/24 interface=ether2 network=192.168.20.0
 /ip dhcp-client
 add disabled=no interface=ether1
 /system identity
@@ -359,12 +363,16 @@ set name=PC2
 set [ find default=yes ] supplicant-identity=MikroTik
 /ip address
 add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
-add address=192.168.30.2/30 interface=ether2 network=192.168.30.0
+add address=192.168.30.2/24 interface=ether2 network=192.168.30.0
 /ip dhcp-client
 add disabled=no interface=ether1
 /system identity
 set name=PC3
 ```
+
+**Вторая часть:** На 3 роутерах (SPB, NY, SVL) был разобран VRF. Далее на этих трех роутерах был настроен VPLS, для чего с интерфейсов этих роутеров, через которые они связаны с компьютерами, был удален IP-адрес и применены настройки конфигурации, представленные ниже. Также на компьютерах была настроена IP-адресация в одной сети (192.168.0.0/24).
+
+
 
 4. Проверки локальной связности
 
@@ -377,11 +385,13 @@ set name=PC3
 
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lbnbgppeer.jpeg)
 
-- Проверка связности между VRF
+- Проверка связности между VRF в **1** части
 
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/spbcheck.jpeg)
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/nycheck.jpeg)
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/svlcheck.jpeg)
+
+- Проверка связности между компьютерами при использовании VPLS во **2** части
 
 
 
