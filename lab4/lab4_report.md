@@ -92,11 +92,11 @@ topology:
 
 2. Схема связи
 
-Cхема связи для **1** части 
+- Cхема связи для **1** части 
 
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lab4.drawio.png "Схема связи для 1 части")
 
-Cхема связи для **2** части 
+- Cхема связи для **2** части 
 
 ![](https://github.com/kostenkoda/2022_2023-introduction_in_routing-k33212-kostenko_d_a/blob/main/lab4/pictures/lab4-2.drawio.png "Схема связи для 2 части")
 
@@ -374,7 +374,7 @@ set name=PC3
 
 **Вторая часть:** На 3 роутерах (SPB, NY, SVL) был разобран VRF. Далее на этих 3 роутерах был настроен VPLS, для чего с интерфейсов этих роутеров, через которые они связаны с компьютерами, был удален IP-адрес и применены настройки конфигурации, представленные ниже. Также на компьютерах была настроена IP-адресация в одной сети (192.168.0.0/24).
 
-R01.SPB
+- R01.SPB
 ```
 /interface bridge
 add name=VPLSb
@@ -389,7 +389,7 @@ add bridge=VPLSb interface=VPLS1
 add bridge=VPLSb interface=VPLS2
 ```
 
-R01.NY
+- R01.NY
 ```
 /interface bridge
 add name=VPLSb
@@ -404,7 +404,7 @@ add bridge=VPLSb interface=VPLS1
 add bridge=VPLSb interface=VPLS3
 ```
 
-R01.SVL
+- R01.SVL
 ```
 /interface bridge
 add name=VPLSb
@@ -419,19 +419,19 @@ add bridge=VPLSb interface=VPLS2
 add bridge=VPLSb interface=VPLS3
 ```
 
-PC1
+- PC1
 ```
 /ip address
 add address=192.168.0.1/24 interface=ether2 network=192.168.0.0
 ```
 
-PC2
+- PC2
 ```
 /ip address
 add address=192.168.0.2/24 interface=ether2 network=192.168.0.0
 ```
 
-PC3
+- PC3
 ```
 /ip address
 add address=192.168.0.3/24 interface=ether2 network=192.168.0.0
